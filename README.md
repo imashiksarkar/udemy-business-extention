@@ -4,11 +4,18 @@ A Chrome extension that simplifies the sign-in process for Udemy Business accoun
 
 ## Installation Guide
 
-### Method 1: Install from Chrome Web Store
+### Method 1: Install from Release
+
+1. Go to the [Releases](https://github.com/imashiksarkar/udemy-business-extention/releases) page
+2. Download the latest release (`.zip` file)
+3. Extract the downloaded file
+4. Follow the steps in Method 2 from step 2 onwards to load the extracted extension
+
+### Method 2: Install from Chrome Web Store
 
 **Note:** Coming soon to the Chrome Web Store
 
-### Method 2: Install Locally (Developer Mode)
+### Method 3: Install from Source (Developer Mode)
 
 1. Download or clone this repository:
 
