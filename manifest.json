@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Business Udemy",
+  "version": "1.0",
+  "author": "Ashik Sarkar <ashiksarkar.s18@gmail.com>",
+  "description": "A Chrome extension that simplifies the sign-in process for Udemy Business accounts, helping users access their learning content more efficiently.",
+  "permissions": ["cookies", "storage"],
+  "host_permissions": ["https://gale.udemy.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

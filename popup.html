@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Udemy | Login</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      button {
+        padding: 8px 12px;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <div id="loginScreen">
+      <h3>Login to gale.udemy.com</h3>
+      <button id="loginBtn">Login</button>
+      <button id="resetTokenBtn">Reset Token</button>
+    </div>
+
+    <div id="saveTokenScreen" class="hidden">
+      <h3>Save Token</h3>
+      <input type="text" id="tokenInput" placeholder="Enter your token here" />
+      <button id="clearInput">Clear</button>
+      <button id="saveTokenBtn">Save Token</button>
+      <button id="saveUpdatedCookie">Get Updated Cookie</button>
+      <button id="copyToClipboard">Copy to Clipboard</button>
+    </div>
+
+    <p id="status"></p>
+
+    <footer style="margin-top: 20px; font-size: 12px">
+      Copyright ©
+      <a href="https://github.com/imashiksarkar" target="_blank"
+        >Ashik Sarkar</a
+      >
+    </footer>
+  </body>
+</html>
