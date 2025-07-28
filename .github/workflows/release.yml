@@ -1,22 +1,32 @@
-name: Build & Release Extension
+name: Build & Release Chrome Extension
 
 on:
   release:
     types: [published]
 
+permissions:
+  contents: write # 🔥 This gives the GITHUB_TOKEN the needed power
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Get release tag
+        id: vars
+        run: echo "RELEASE_TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
       - name: Create ZIP of extension
         run: |
-          mkdir dist
-          zip -r dist/chrome-extension.zip . -x "dist/*" ".git/*" ".github/*"
+          mkdir -p dist
+          zip -r dist/chrome-extension-${RELEASE_TAG}.zip . -x "dist/*" ".git/*" ".github/*"
 
-      - name: Upload ZIP to release
+      - name: Upload ZIP to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/chrome-extension.zip
+          files: dist/chrome-extension-${{ env.RELEASE_TAG }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
