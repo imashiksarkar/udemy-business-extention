@@ -1,0 +1,22 @@
+name: Build & Release Extension
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Create ZIP of extension
+        run: |
+          mkdir dist
+          zip -r dist/chrome-extension.zip ./extension
+
+      - name: Upload ZIP to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/chrome-extension.zip
